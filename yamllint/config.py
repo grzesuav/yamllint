@@ -33,7 +33,7 @@ class YamlLintConfig(object):
         self.ignore = None
 
         self.yaml_files = pathspec.PathSpec.from_lines(
-            'gitwildmatch', ['*.yaml', '*.yml', '.yamllint'])
+            'gitwildmatch', ['*.yaml', '*.yml'])
 
         if file is not None:
             with open(file) as f:
@@ -103,13 +103,10 @@ class YamlLintConfig(object):
                 'gitwildmatch', conf['ignore'].splitlines())
 
         if 'yaml-files' in conf:
-            if not (isinstance(conf['yaml-files'], list)
-                    and all(isinstance(i, str) for i in conf['yaml-files'])):
+            if not (isinstance(conf['yaml-files'], list) and all(isinstance(i, str) for i in conf['yaml-files'])):
                 raise YamlLintConfigError(
-                    'invalid config: yaml-files '
-                    'should be a list of file patterns')
-            self.yaml_files = pathspec.PathSpec.from_lines('gitwildmatch',
-                                                           conf['yaml-files'])
+                    'invalid config: yaml-files should be a list of file patterns')
+            self.yaml_files = pathspec.PathSpec.from_lines('gitwildmatch', conf['yaml-files'])
 
     def validate(self):
         for id in self.rules:
