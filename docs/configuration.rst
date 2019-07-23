@@ -115,21 +115,21 @@ return code will be:
  * ``1`` if one or more errors occur
  * ``2`` if no errors occur, but one or more warnings occur
 
-YAML files extensions
----------------------
+YAML file extensions
+--------------------
 
-To configure what yamllint should consider as YAML files, set ``yaml-files``
-configuration option. The default is:
+To configure what yamllint should consider as yaml files, set `yaml-files`
+configuration option.
+The default is:
 
 .. code-block:: yaml
 
  yaml-files:
  - '*.yaml'
  - '*.yml'
- - '.yamllint'
 
-The same rules as for ignoring paths apply (``.gitignore``-style path pattern,
-see below).
+The same rules as for ignoring paths applies
+(``.gitignore``-style path pattern,see below).
 
 Ignoring paths
 --------------
