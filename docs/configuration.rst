@@ -125,8 +125,9 @@ The default is:
 .. code-block:: yaml
 
  yaml-files:
- - '*.yaml'
- - '*.yml'
+   - '*.yaml'
+   - '*.yml'
+   - '.yamllint'
 
 The same rules as for ignoring paths applies
 (``.gitignore``-style path pattern,see below).
